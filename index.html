@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Constitution of India Learning App</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/game.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Welcome Screen -->
+    <div id="welcome-screen" class="screen active">
+      <div class="content-container">
+        <h1>Constitution of India</h1>
+        <h2>Learning Game</h2>
+        <div class="emblem-container">
+        </div>
+        <p class="description">Learn about the Constitution of India through interactive gameplay!</p>
+        <div class="categories">
+          <div class="category">
+            <h3>Fundamental Rights</h3>
+            <p>Articles 12-35</p>
+          </div>
+          <div class="category">
+            <h3>Fundamental Duties</h3>
+            <p>Article 51A</p>
+          </div>
+          <div class="category">
+            <h3>Elections</h3>
+            <p>Articles 324-329A</p>
+          </div>
+          <div class="category">
+            <h3>Citizenship</h3>
+            <p>Articles 5-11</p>
+          </div>
+        </div>
+        <button id="start-btn" class="btn primary-btn">Start Learning</button>
+        <button id="instructions-btn" class="btn secondary-btn">How to Play</button>
+      </div>
+    </div>
+
+    <!-- Instructions Screen -->
+    <div id="instructions-screen" class="screen">
+      <div class="content-container">
+        <h2>How to Play</h2>
+        <div class="instructions">
+          <div class="level-instruction">
+            <h3>Level 1: Article Ninja</h3>
+            <p>Tap on the articles as they appear on screen to learn about them.</p>
+            <p>You need to score 30/39 points to advance to Level 2.</p>
+          </div>
+          <div class="level-instruction">
+            <h3>Level 2: Match the Articles</h3>
+            <p>Match article numbers to their correct explanations.</p>
+            <p>10 matches to complete with 15 options.</p>
+            <p>More than 5 mistakes will send you back to Level 1.</p>
+          </div>
+          <div class="scoring">
+            <h3>Scoring</h3>
+            <ul>
+              <li>Start with 100 coins</li>
+              <li>Each correct match: +1 coin</li>
+              <li>All 10 matches correct: +20 bonus coins</li>
+              <li>Help or replay: -40 coins</li>
+            </ul>
+          </div>
+        </div>
+        <button id="back-to-welcome" class="btn primary-btn">Back to Menu</button>
+      </div>
+    </div>
+
+    <!-- Level 1 Screen -->
+    <div id="level1-screen" class="screen">
+      <div class="game-header">
+        <div class="score-container">
+          <span>Coins: <span id="coins">100</span></span>
+          <span>Score: <span id="score">0</span>/39</span>
+        </div>
+        <div class="level-indicator">Level 1: Article Ninja</div>
+        <div class="controls">
+          <button id="pause-btn" class="icon-btn">⏸️</button>
+        </div>
+      </div>
+      <div id="game-area" class="game-area">
+        <!-- Game elements will be added dynamically -->
+      </div>
+      <div id="article-popup" class="article-popup">
+        <div class="popup-content">
+          <h3 id="popup-title">Article <span id="article-number"></span></h3>
+          <div id="article-category" class="article-category"></div>
+          <p id="article-description"></p>
+          <button id="close-popup" class="btn primary-btn">Continue</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Level 2 Screen -->
+    <div id="level2-screen" class="screen">
+      <div class="game-header">
+        <div class="score-container">
+          <span>Coins: <span id="coins-level2">100</span></span>
+          <span>Matches: <span id="matches">0</span>/10</span>
+          <span>Mistakes: <span id="mistakes">0</span>/5</span>
+        </div>
+        <div class="level-indicator">Level 2: Match the Articles</div>
+        <div class="controls">
+          <button id="help-btn" class="btn small-btn">Help (40 coins)</button>
+        </div>
+      </div>
+      <div class="matching-game-container">
+        <div id="articles-container" class="matching-column">
+          <h3>Article Numbers</h3>
+          <div id="article-numbers" class="matching-items"></div>
+        </div>
+        <div id="descriptions-container" class="matching-column">
+          <h3>Descriptions</h3>
+          <div id="article-descriptions" class="matching-items"></div>
+        </div>
+      </div>
+      <div class="game-footer">
+        <button id="submit-matches" class="btn primary-btn">Submit Matches</button>
+      </div>
+    </div>
+
+    <!-- Results Screen -->
+    <div id="results-screen" class="screen">
+      <div class="content-container">
+        <h2>Congratulations!</h2>
+        <div class="results-container">
+          <div class="result-item">
+            <h3>Final Score</h3>
+            <div id="final-score" class="result-value">0</div>
+          </div>
+          <div class="result-item">
+            <h3>Total Coins</h3>
+            <div id="final-coins" class="result-value">0</div>
+          </div>
+        </div>
+        <p id="result-message">You've successfully completed the Constitution of India learning game!</p>
+        <button id="play-again" class="btn primary-btn">Play Again</button>
+        <button id="back-to-menu" class="btn secondary-btn">Back to Menu</button>
+      </div>
+    </div>
+
+    <!-- Pause Menu -->
+    <div id="pause-menu" class="overlay">
+      <div class="overlay-content">
+        <h2>Game Paused</h2>
+        <button id="resume-btn" class="btn primary-btn">Resume</button>
+        <button id="restart-btn" class="btn secondary-btn">Restart</button>
+        <button id="exit-to-menu" class="btn secondary-btn">Exit to Menu</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/gameData.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/level1.js"></script>
+  <script src="js/level2.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

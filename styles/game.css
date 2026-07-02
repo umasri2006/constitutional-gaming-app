@@ -1,0 +1,267 @@
+/* Game Specific Styles */
+
+/* Level 1 - Article Ninja */
+.game-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-2) var(--space-3);
+  background-color: white;
+  box-shadow: var(--shadow-sm);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-3);
+}
+
+.score-container {
+  display: flex;
+  gap: var(--space-4);
+  font-weight: 500;
+}
+
+.level-indicator {
+  font-weight: 700;
+  color: var(--accent-color);
+}
+
+.game-area {
+  position: relative;
+  height: calc(100vh - 150px);
+  background-color: var(--neutral-100);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md) inset;
+}
+
+.article-item {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  color: white;
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.5s ease; /* Increased from 0.3s to 0.5s */
+  user-select: none;
+  z-index: 1;
+}
+
+.article-item:hover {
+  transform: scale(1.1);
+}
+
+.article-item.sliced {
+  animation: slice 0.8s forwards ease-out; /* Increased from 0.5s to 0.8s */
+}
+
+.fundamental-rights {
+  background-color: var(--primary-color);
+}
+
+.fundamental-duties {
+  background-color: var(--secondary-color);
+}
+
+.elections {
+  background-color: var(--accent-color);
+}
+
+.citizenship {
+  background-color: var(--neutral-700);
+}
+
+.article-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.article-popup.active {
+  display: flex;
+  animation: fadeIn 0.5s ease;
+}
+
+.popup-content {
+  background-color: white;
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  max-width: 600px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: var(--shadow-lg);
+}
+
+.popup-content h3 {
+  color: var(--accent-color);
+  margin-bottom: var(--space-3);
+  text-align: center;
+}
+
+.article-category {
+  display: inline-block;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--space-3);
+  font-weight: 500;
+  font-size: var(--font-size-sm);
+  color: white;
+}
+
+.article-category.fundamental-rights {
+  background-color: var(--primary-color);
+}
+
+.article-category.fundamental-duties {
+  background-color: var(--secondary-color);
+}
+
+.article-category.elections {
+  background-color: var(--accent-color);
+}
+
+.article-category.citizenship {
+  background-color: var(--neutral-700);
+}
+
+/* Level 2 - Matching Game */
+.matching-game-container {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-4);
+  margin: var(--space-4) 0;
+  height: calc(100vh - 250px);
+}
+
+.matching-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+  box-shadow: var(--shadow-md);
+  overflow-y: auto;
+}
+
+.matching-column h3 {
+  text-align: center;
+  margin-bottom: var(--space-3);
+  color: var(--accent-color);
+  position: sticky;
+  top: 0;
+  background-color: white;
+  padding: var(--space-2);
+  z-index: 1;
+}
+
+.matching-items {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  flex-grow: 1;
+}
+
+.matching-item {
+  padding: var(--space-2);
+  background-color: var(--neutral-100);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all 0.5s ease; /* Increased from 0.3s to 0.5s */
+  box-shadow: var(--shadow-sm);
+}
+
+.matching-item:hover {
+  background-color: var(--neutral-200);
+  transform: translateY(-2px);
+}
+
+.matching-item.selected {
+  background-color: var(--primary-light);
+  border: 2px solid var(--primary-color);
+}
+
+.matching-item.matched {
+  background-color: var(--success-color);
+  color: white;
+  cursor: default;
+}
+
+.game-footer {
+  margin-top: var(--space-4);
+  text-align: center;
+  position: sticky;
+  bottom: 0;
+  background-color: var(--neutral-50);
+  padding: var(--space-3);
+  border-top: 1px solid var(--neutral-200);
+}
+
+/* Animations */
+@keyframes slice {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.5) rotate(180deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(0) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Particle effect for sliced articles */
+.particle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .matching-game-container {
+    flex-direction: column;
+    height: auto;
+  }
+  
+  .matching-column {
+    max-height: 40vh;
+  }
+  
+  .game-area {
+    height: calc(100vh - 200px);
+  }
+  
+  .article-item {
+    width: 60px;
+    height: 60px;
+    font-size: var(--font-size-sm);
+  }
+  
+  .game-header {
+    flex-direction: column;
+    gap: var(--space-2);
+    padding: var(--space-2);
+  }
+  
+  .score-container {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
