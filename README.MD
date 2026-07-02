@@ -1,20 +1,46 @@
-# 🇮🇳 Constitution of India Learning Game
-
-An interactive educational web application that transforms learning the Constitution of India into a fun and engaging gaming experience. The application combines visual learning, quizzes, and gamification to help users understand constitutional articles and improve knowledge retention.
 
 ---
-
 ## 📖 Project Overview
 
 The Constitution of India Learning Game is designed to simplify constitutional learning by replacing traditional reading methods with an interactive, game-based approach.
 
 Players progress through multiple levels where they first learn constitutional articles and then test their understanding through matching challenges. The application covers important constitutional topics including **Fundamental Rights, Citizenship, and Elections**.
 
+## Screenshots
+### Home Page
+
+The main landing page where users can explore constitutional topics and begin their learning journey.
+
+![Home Page](./screenshots/mainpage.png)
+
 ---
 
-## 🎮 Gameplay
+### Level 1 – Interactive Bubble Learning
 
-### 🟠 Level 1 – Learn Through Interactive Bubbles
+Players learn the Constitution by clicking on colorful numbered bubbles. Each bubble opens the corresponding constitutional article along with its explanation. After reading, users click **Continue** to proceed until all **40 articles** are completed.
+
+![Level 1](./screenshots/level1.png)
+
+---
+
+### How to Play
+
+The application provides clear instructions explaining the gameplay, levels, scoring system, and progression.
+
+![How to Play](./screenshots/howtoplay.png)
+
+---
+
+### Level 2 – Article Matching Challenge
+
+After completing Level 1, players unlock Level 2, where they match constitutional articles with their correct descriptions. Players begin with **100 coins**, and hints are available for **40 coins** each. A qualifying score is required to complete the game successfully.
+
+![Level 2](./screenshots/level2.png)
+
+
+## Gameplay
+
+### Level 1 – Learn Through Interactive Bubbles
 
 The game begins with **40 colorful numbered bubbles**, where each bubble represents an important constitutional article.
 
@@ -29,10 +55,7 @@ Each constitutional category is color-coded for easy identification:
 - Repeat until all **40 bubbles** have been completed.
 
 This level helps users build a strong understanding of constitutional articles before moving on to the assessment stage.
-
----
-
-### 🧩 Level 2 – Match the Articles
+### Level 2 – Match the Articles
 
 After completing all 40 articles, players unlock **Level 2**.
 
@@ -48,30 +71,24 @@ Example:
 
 Players submit their answers after completing all matches.
 
----
-
-## 🪙 Coin & Hint System
+## Coin & Hint System
 
 To make gameplay more engaging, the application includes a virtual coin system.
 
-- 🎁 Every player starts with **100 coins**
-- 💡 A hint costs **40 coins**
+-  Every player starts with **100 coins**
+-  A hint costs **40 coins**
 - Players can spend coins if they need help answering a question in Level 2
 
 This encourages strategic thinking while keeping the game challenging.
 
----
-
-## ✅ Qualification Criteria
+##  Qualification Criteria
 
 Players must achieve the required qualifying score in Level 2.
 
-- ✔️ Pass → Successfully complete the game.
-- ❌ Fail → Restart from **Level 1** to review the constitutional articles before attempting the quiz again.
+-  Pass → Successfully complete the game.
+-  Fail → Restart from **Level 1** to review the constitutional articles before attempting the quiz again.
 
 This reinforcement-based learning approach helps improve memory and understanding.
-
----
 
 ##  Features
 
@@ -84,8 +101,6 @@ This reinforcement-based learning approach helps improve memory and understandin
 - Responsive and user-friendly interface
 - Educational and gamified learning
 
----
-
 ## Tech Stack
 
 - React
@@ -95,9 +110,7 @@ This reinforcement-based learning approach helps improve memory and understandin
 - HTML5
 - CSS3
 - JavaScript
-
----
-
+--- 
 ## Getting Started
 
 ```bash
@@ -115,35 +128,5 @@ Visit:
 ```
 http://localhost:5173
 ```
-
----
-
-## Project Structure
-
-```
-constitutional-gaming-app/
-├── src/
-├── public/
-├── js/
-├── styles/
-├── package.json
-├── vite.config.ts
-└── README.md
-```
-
----
-
-##  Future Enhancements
-
-- Leaderboard
-- Progress tracking
-- Achievement badges
-- Difficulty levels
-- Additional constitutional topics
-- Audio explanations
-- Dark mode
-- Multiplayer quiz mode
-
----
 
 GitHub: https://github.com/umasri2006
